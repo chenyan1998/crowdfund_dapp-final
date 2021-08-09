@@ -113,7 +113,7 @@
       </v-container>
 
       <v-container grid-list-lg>
-        <h1 class="display-1 font-weight-bold mb-3">Projects</h1>
+        <h1 class="display-1 font-weight-bold mb-3">Ongoing Projects List</h1>
         <v-layout row wrap>
           <v-flex v-for="(project, index) in projectData" :key="index" xs12>
             <v-dialog v-model="project.dialog" width="800">
@@ -164,14 +164,14 @@
                     </span>
                     <br /><br />
                     <small
-                      >Up Until:
-                      <b>{{ new Date(project.deadline * 1000) }}</b></small
-                    >
+                      >Deadline :
+                      <span class="red--text"> <b>{{ new Date(project.deadline * 1000) }}</b></span>
+                      </small>
                     <br /><br />
                     <small
-                      >Goal of
-                      <b>{{ project.goalAmount / 10 ** 18 }} ETH </b></small
-                    >
+                      >Goal of : 
+                      <span class="red--text"> <b>{{ project.goalAmount / 10 ** 18 }} ETH </b></span>
+                      </small>
                     <small v-if="project.currentState == 1"
                       >wasn't achieved before deadline</small
                     >
@@ -197,7 +197,8 @@
                     min="0"
                     v-model="project.fundAmount"
                   ></v-text-field>
-                  <v-btn
+                  
+                  <v-btn 
                     class="mt-3"
                     color="light-blue darken-1 white--text"
                     @click="fundProject(index)"
@@ -205,6 +206,7 @@
                   >
                     Fund
                   </v-btn>
+                  
                   <br/><br/>
                     <v-btn class="mt-3"
                       color="amber darken-1 white--text"
@@ -243,6 +245,7 @@
               </v-card>
             </v-hover>
           </v-flex>
+            
         </v-layout>
         
       </v-container>
@@ -260,6 +263,7 @@ import crowdfundProject from "../contracts/crowdfundProjectInstance";
 import web3 from "../contracts/web3";
 import Footer from './components/footer';
 import Top from './components/top';
+import Topbar from './components/topbar';
 
 
 export default {
@@ -267,6 +271,7 @@ export default {
   components: {
     Footer,
     Top,
+    Topbar,
   },
   data() {
     return {
