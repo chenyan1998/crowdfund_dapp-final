@@ -4,7 +4,7 @@
       <br>
       <br>
       <br>
-      
+
       <v-layout
             text-xs-center
             wrap
@@ -30,16 +30,16 @@
         
         <v-layout text-xs-center wrap>
           <v-flex mb-4>
-            <h1 class="display-2 font-weight-bold mb-3">Crowdfunding</h1>
+            <h1 class="display-2 font-weight-bold mb-3">Let's Start Now !!</h1>
             <p class="subheading font-weight-regular">
-              Utilizing Ethereum for Decentralized Crowdfunding
+              Start to create your own projects 
             </p>
           </v-flex>
         </v-layout>
 
         <v-layout row justify-center>
           <v-dialog v-model="startProjectDialog" max-width="600px" persistent>
-            <v-btn slot="activator" color="primary" dark>Start a Project</v-btn>
+            <v-btn slot="activator" color="amber darken-1 white--text" dark>Create a Project</v-btn>
             <v-card>
               <v-card-title>
                 <span class="headline font-weight-bold mt-2 ml-4"
@@ -204,6 +204,13 @@
                     :loading="project.isLoading"
                   >
                     Fund
+                  </v-btn>
+                  <br/><br/>
+                    <v-btn class="mt-3"
+                      color="amber darken-1 white--text"
+                      @click="getRefund(index)"
+                    >
+                      Get refund
                   </v-btn>
                 </v-flex>
                 <v-flex class="d-flex ml-3" xs12 sm6 md3>
