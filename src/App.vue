@@ -257,9 +257,6 @@
         
       </v-container>
     </v-content>
-    <v-main>
-      <Footer/>
-    </v-main>
   </v-app>
 </template>
 
@@ -268,7 +265,6 @@
 import crowdfundInstance from "../contracts/crowdfundInstance";
 import crowdfundProject from "../contracts/crowdfundProjectInstance";
 import web3 from "../contracts/web3";
-import Footer from './components/footer';
 import Top from './components/top';
 import Topbar from './components/topbar';
 
@@ -276,7 +272,6 @@ import Topbar from './components/topbar';
 export default {
   name: "App",
   components: {
-    Footer,
     Top,
     Topbar,
   },
