@@ -1,6 +1,6 @@
 <template>
   <v-app >
-    <v-container>
+    <v-container style="background:#26c6da;color:white">
       <br>
       <br>
       <br>
@@ -25,7 +25,7 @@
       </v-container>
 
 
-    <v-content>
+    <v-content style="background:#26c6da;color:white">
       <v-container>
         
         <v-layout text-xs-center wrap>
@@ -40,14 +40,14 @@
         <v-layout row justify-center>
           <v-dialog v-model="startProjectDialog" max-width="600px" persistent>
             <v-btn slot="activator" color="amber darken-1 white--text" dark>Create a Project</v-btn>
-            <v-card>
+            <v-card style="background:#E1F5FE;color:white">
               <v-card-title>
-                <span class="headline font-weight-bold mt-2 ml-4"
+                <span style="color:black" class="headline font-weight-bold mt-2 ml-4"
                   >Bring your project to life</span
                 >
               </v-card-title>
               <v-card-text class="pt-0">
-                <v-container class="pt-0" grid-list-md>
+                <v-container  class="pt-0" grid-list-md>
                   <v-layout wrap>
                     <v-flex xs12>
                       <v-text-field
@@ -65,7 +65,7 @@
                       >
                       </v-textarea>
                     </v-flex>
-                    <v-flex xs12 sm6>
+                    <v-flex  xs12 sm6>
                       <v-text-field
                         label="Amount Needed (ETH)"
                         type="number"
@@ -112,7 +112,7 @@
         </v-layout>
       </v-container>
 
-      <v-container grid-list-lg>
+      <v-container style="background:#26c6da;color:white" grid-list-lg>
         <h1 class="display-1 font-weight-bold mb-3">Ongoing Projects List</h1>
         <v-layout row wrap>
           <v-flex v-for="(project, index) in projectData" :key="index" xs12>
@@ -187,7 +187,7 @@
                   "
                   class="d-flex ml-3"
                   xs12
-                  sm6
+                  sm10
                   md3
                 >
                   <v-text-field
@@ -213,6 +213,13 @@
                       @click="getRefund(index)"
                     >
                       Get refund
+                  </v-btn>
+                  <br/><br/>
+                  <v-btn 
+                    class="mt-3"
+                    color="#9CCC65"
+                  >
+                    Vote
                   </v-btn>
                 </v-flex>
                 <v-flex class="d-flex ml-3" xs12 sm6 md3>
@@ -273,12 +280,13 @@ export default {
     Top,
     Topbar,
   },
+  // color="amber darken-1 white--text"
   data() {
     return {
       startProjectDialog: false,
       account: null,
       stateMap: [
-        { color: "primary", text: "Ongoing" },
+        { color: "amber darken-1 white--text", text: "Ongoing" },
         { color: "warning", text: "Expired" },
         { color: "success", text: "Completed" },
       ],

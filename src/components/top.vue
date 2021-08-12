@@ -133,20 +133,20 @@
           href: 'https://vuetifyjs.com',
         },
         {
-          text: 'Functions',
+          text: 'Smart Contract',
           href: 'https://community.vuetifyjs.com',
-        },
-        {
-          text: 'SmartContract',
-          href: 'https://madewithvuejs.com/vuetify',
         },
         {
           text: 'Past Successful Projects',
           href: 'https://twitter.com/vuetifyjs',
         },
         {
-          text: 'Teams',
-          href: 'https://medium.com/vuetify',
+          text: 'Check My Wallet',
+          href: 'chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/home.html#',
+        },
+        {
+          text: 'Transcation History',
+          href: 'https://ropsten.etherscan.io/',
         },
       ],
       
