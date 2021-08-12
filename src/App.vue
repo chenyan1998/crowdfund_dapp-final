@@ -385,6 +385,17 @@ export default {
         console.error();
       }
     },
+    startVote() {
+      this.projectData[index].isLoading = true;
+      this.projectData[index].contract.methods
+        .startVote()
+        .send({
+          from: this.account,
+        })
+        .then(() => {
+          this.projectData[index].isLoading = false;
+        })
+    }
   },
 };
 </script>
