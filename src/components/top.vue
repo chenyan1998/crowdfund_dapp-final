@@ -42,23 +42,23 @@
 
       <v-col class="mb-4">
         <br>
-        <h1 class="display-6 font-weight-bold mb-3">
+        <!-- <h1 class="display-6 font-weight-bold mb-3">
           Problem Statement
         </h1>
         <p class="subheading font-weight-regular">
          {{problem_text}}
-        </p>
+        </p> -->
 
         <br>
-        <h1 class="display-6 font-weight-bold mb-3">
+        <!-- <h1 class="display-6 font-weight-bold mb-3">
           Our Solution
         </h1>
         <p class="subheading font-weight-regular">
          {{solution_text}}
-        </p>
+        </p> -->
 
         <br>
-        <h1 class="display-6 font-weight-bold mb-3">
+        <!-- <h1 class="display-6 font-weight-bold mb-3">
           Use cases
         </h1>
         <p class="subheading font-weight-regular">
@@ -69,7 +69,7 @@
         </p>
         <p class="subheading font-weight-regular"><b>Charity</b>
          {{usecases_text2}}
-        </p>
+        </p> -->
       </v-col>
       <br>
       <v-col

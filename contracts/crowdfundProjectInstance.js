@@ -49,6 +49,25 @@ const abi = [
 		"inputs": [
 			{
 				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "contributors",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
 				"type": "address"
 			}
 		],
@@ -112,6 +131,20 @@ const abi = [
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getContributors",
+		"outputs": [
+			{
+				"name": "projectContributors",
+				"type": "address[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -261,7 +294,19 @@ const abi = [
 				"type": "address"
 			}
 		],
-		"name": "CreatorPaid",
+		"name": "CreatorPaidStage1",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "recipient",
+				"type": "address"
+			}
+		],
+		"name": "CreatorPaidStage2",
 		"type": "event"
 	}
 ]; // Your ABI goes here (Project contract)

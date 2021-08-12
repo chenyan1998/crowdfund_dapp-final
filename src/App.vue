@@ -176,13 +176,13 @@
                       >wasn't achieved before deadline</small
                     >
                     <small v-if="project.currentState == 2"
-                      >has been achieved</small
+                      >has been achieved. Stage 1 payout complete, awaiting call for vote.</small
                     >
                   </div>
                 </v-card-title>
                 <v-flex
                   v-if="
-                    project.currentState == 0 
+                    project.currentState == 0 || project.currentState == 2
                   
                   "
                   class="d-flex ml-3"
@@ -234,7 +234,7 @@
                   </v-btn>
                 </v-flex>
                 <v-card-actions
-                  v-if="project.currentState == 0"
+                  v-if="project.currentState == 0 || project.currentState == 2"
                   class="text-xs-center"
                 >
                   <span class="font-weight-bold" style="width: 200px">
@@ -366,11 +366,12 @@ export default {
 
           // Set project state to success
           if (newTotal >= projectGoal) {
-            this.projectData[index].currentState = 2;
+            this.projectData[index].currentState = 2; // state 2 is now after stage 1 payout
           }
         });
     },
     getRefund(index) {
+      try {
       this.projectData[index].isLoading = true;
       this.projectData[index].contract.methods
         .getRefund()
@@ -380,6 +381,9 @@ export default {
         .then(() => {
           this.projectData[index].isLoading = false;
         });
+      } catch (error) {
+        console.error();
+      }
     },
   },
 };
