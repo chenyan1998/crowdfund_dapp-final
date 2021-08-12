@@ -176,20 +176,6 @@ const abi = [
 		"type": "function"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "ballotCreator",
-				"type": "address"
-			}
-		],
-		"name": "startVote",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"constant": true,
 		"inputs": [],
 		"name": "currentBalance",
@@ -321,28 +307,6 @@ const abi = [
 			}
 		],
 		"name": "CreatorPaidStage2",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "contractAddress",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "chairperson",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "voters",
-				"type": "address[]"
-			}
-		],
-		"name": "BallotStarted",
 		"type": "event"
 	}
 ]; // Your ABI goes here (Project contract)
