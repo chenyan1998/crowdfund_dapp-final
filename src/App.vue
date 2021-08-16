@@ -218,21 +218,38 @@
                   <v-btn 
                     class="mt-3"
                     color="#9CCC65"
-                  >
+                    @click="increment">
                     Vote
                   </v-btn>
-                </v-flex>
+                  </v-flex>
+                  <!-- vote progress bar  -->
+                  <v-card-actions
+                  v-if="project.currentState == 0"
+                  class="text-xs-center">
+                  <span class="font-weight-bold" style="width: 200px">
+                    {{ count }} Vote
+                  </span>
+                  <v-progress-linear
+                    height="10"
+                    :color= "green"
+                    :value="(count / 200) * 100"
+                  ></v-progress-linear>
+                  <span class="font-weight-bold" style="width: 200px">
+                    {{ 200 }} Vote
+                  </span>
+                </v-card-actions>
+
                 <v-flex class="d-flex ml-3" xs12 sm6 md3>
                   <v-btn
                     class="mt-3"
                     color="amber darken-1 white--text"
                     v-if="project.currentState == 1"
                     @click="getRefund(index)"
-                    :loading="project.isLoading"
-                  >
+                    :loading="project.isLoading">
                     Get refund
                   </v-btn>
                 </v-flex>
+                <!-- Fund progress bar  -->
                 <v-card-actions
                   v-if="project.currentState == 0"
                   class="text-xs-center"
@@ -285,6 +302,7 @@ export default {
         { color: "warning", text: "Expired" },
         { color: "success", text: "Completed" },
       ],
+      count:0,
       projectData: [],
       newProject: { isLoading: false },
     };
@@ -299,6 +317,9 @@ export default {
     });
   },
   methods: {
+    increment () {
+    	this.count += 1;
+    },
     getProjects() {
       crowdfundInstance.methods
         .returnAllProjects()
